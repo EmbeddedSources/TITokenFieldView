@@ -469,7 +469,7 @@ CGFloat const kSeparatorHeight = 1;
 		[self setBorderStyle:UITextBorderStyleNone];
 		[self setTextColor:[UIColor blackColor]];
 		[self setFont:[UIFont systemFontOfSize:14]];
-		[self setBackgroundColor:[UIColor whiteColor]];
+		[self setBackgroundColor:[UIColor clearColor]];
 		[self setAutocorrectionType:UITextAutocorrectionTypeNo];
 		[self setAutocapitalizationType:UITextAutocapitalizationTypeNone];
 		[self setTextAlignment:UITextAlignmentLeft];
@@ -520,7 +520,7 @@ CGFloat const kSeparatorHeight = 1;
 		[tokensArray addObject:token];
 		[token release];
 		
-		[self updateHeight:NO];
+      [self layoutTokens];
 		[self setText:kTextEmpty];
 	}
 }
@@ -531,7 +531,7 @@ CGFloat const kSeparatorHeight = 1;
 	[tokensArray removeObject:token];
 	
 	[self setText:kTextEmpty];
-	[self updateHeight:NO];
+	[self layoutTokens ];
 }
 
 - (void)tokenGotFocus:(TIToken *)token {
